@@ -1,0 +1,6 @@
+#!/bin/bash
+	rand=$(shuf -n 1 ~/scripts/macaddress.txt) 	#location of your mac address list mine is located in ~/scripts/macaddress.txt 
+	echo $rand sudo ifconfig wlan0 down 		#change to your interface card
+	sudo macchanger -m $rand wlan0 			#change to your interface card
+	sudo ifconfig wlan0 up 				#change to your interface card
+	sudo service network-manager restart
